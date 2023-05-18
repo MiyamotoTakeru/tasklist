@@ -4,23 +4,9 @@
     <c:param name="content">
         <h2>id : ${tasks.id} のメッセージ編集ページ</h2>
 
-        <form method="POST" action="${pageContext.request.contextPath}/update">
-            <c:if test="${errors != null}">
-    <div id="flush_error">
-        入力内容にエラーがあります。<br />
-        <c:forEach var="error" items="${errors}">
-            ・<c:out value="${error}" /><br />
-        </c:forEach>
-
-    </div>
-</c:if>
-<label for="content_msg">タスク内容</label><br />
-<input type="text" name="content" id="content_msg" value="${tasks.content}" />
-<br /><br />
-
-<input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
-        </form>
+            <form method="POST" action="${pageContext.request.contextPath}/update">
+                    <c:import url="_form.jsp" />
+                </form>
 
         <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
 

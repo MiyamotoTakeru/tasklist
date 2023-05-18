@@ -39,12 +39,12 @@ public class EditServlet extends HttpServlet {
 
         em.close();
 
-        // メッセージ情報とセッションIDをリクエストスコープに登録
+        // タスク情報とセッションIDをリクエストスコープに登録
         request.setAttribute("tasks", m);
         request.setAttribute("_token", request.getSession().getId());
 
-     // メッセージデータが存在しているときのみ
-        // メッセージIDをセッションスコープに登録
+     // タスクデータが存在しているときのみ
+        // タスクIDをセッションスコープに登録
         if(m != null) {
         request.getSession().setAttribute("tasks_id", m.getId());
         }
